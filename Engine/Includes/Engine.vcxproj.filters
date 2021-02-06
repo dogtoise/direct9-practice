@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="00.Management">
+      <UniqueIdentifier>{d3b7858b-e464-4c19-83dd-879065ad2672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.Headers">
+      <UniqueIdentifier>{067eceff-7d37-4d3a-9de7-50e7c733a71b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98.GraphicDevice">
+      <UniqueIdentifier>{8919879a-734e-4f5b-a816-d6c7b73b74b8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Codes\Management.cpp">
+      <Filter>00.Management</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\CGraphicDevice.cpp">
+      <Filter>98.GraphicDevice</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Headers\Management.h">
+      <Filter>00.Management</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Engine_Define.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\CGraphicDevice.h">
+      <Filter>98.GraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h" />
+  </ItemGroup>
+</Project>
