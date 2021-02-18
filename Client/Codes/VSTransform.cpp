@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "..\Headers\VSTransform.h"
+#include "Cube.h"
+#include "ShadedCube.h"
 
 
 VSTransform::VSTransform()
@@ -15,8 +17,9 @@ void VSTransform::Setup()
 {
 	HRESULT hr = 0;
 
-	D3DXCreateTeapot(DEVICE, &teapotMesh, 0);
-
+	//D3DXCreateTeapot(DEVICE, &teapotMesh, 0);
+	 cube = new Cube();
+	 shadedCube = new ShadedCube();
 	ID3DXBuffer* shader = nullptr;
 	ID3DXBuffer* errorBuffer = nullptr;
 
@@ -100,7 +103,21 @@ void VSTransform::Display()
 
 	DEVICE->SetVertexShader(transformShader);
 
-	teapotMesh->DrawSubset(0);
+	//teapotMesh->DrawSubset(0);
 
+	DEVICE->SetVertexDeclaration(shadedCube->m_pDeclare);
+	DEVICE->SetStreamSource(0, shadedCube->_vb, 0, shadedCube->vertexSize);
+	DEVICE->SetFVF(NULL);
+	DEVICE->SetIndices(shadedCube->_ib);
+	//cube->draw(0, 0, 0);
+	DEVICE->DrawIndexedPrimitive
+	(
+		D3DPT_TRIANGLELIST,
+		0,
+		0,
+		24,
+		0,
+		12
+	);
 
 }

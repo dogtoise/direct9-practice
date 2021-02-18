@@ -101,6 +101,10 @@
       <AdditionalLibraryDirectories>../../Reference/Libraries/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <HLSL>
+      <TargetProfile>fx_2_0</TargetProfile>
+      <EntryPointName>main</EntryPointName>
+    </HLSL>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -159,6 +163,7 @@
     <ClInclude Include="..\Headers\DemoCube.h" />
     <ClInclude Include="..\Headers\DemoManager.h" />
     <ClInclude Include="..\Headers\DirectionalLight.h" />
+    <ClInclude Include="..\Headers\HLSLTestDemo.h" />
     <ClInclude Include="..\Headers\IDemo.h" />
     <ClInclude Include="..\Headers\LightHelper.h" />
     <ClInclude Include="..\Headers\LitPyramid.h" />
@@ -167,6 +172,8 @@
     <ClInclude Include="..\Headers\MaterialHelper.h" />
     <ClInclude Include="..\Headers\MeshesDemo.h" />
     <ClInclude Include="..\Headers\PSMultiTexture.h" />
+    <ClInclude Include="..\Headers\ShadedCube.h" />
+    <ClInclude Include="..\Headers\ShaderSample.h" />
     <ClInclude Include="..\Headers\StencilMirror.h" />
     <ClInclude Include="..\Headers\StencilMirrorShadow.h" />
     <ClInclude Include="..\Headers\StencilShadow.h" />
@@ -190,6 +197,7 @@
     <ClCompile Include="..\Codes\DemoCube.cpp" />
     <ClCompile Include="..\Codes\DemoManager.cpp" />
     <ClCompile Include="..\Codes\DirectionalLight.cpp" />
+    <ClCompile Include="..\Codes\HLSLTestDemo.cpp" />
     <ClCompile Include="..\Codes\IDemo.cpp" />
     <ClCompile Include="..\Codes\LightHelper.cpp" />
     <ClCompile Include="..\Codes\LitPyramid.cpp" />
@@ -198,6 +206,8 @@
     <ClCompile Include="..\Codes\MaterialHelper.cpp" />
     <ClCompile Include="..\Codes\MeshesDemo.cpp" />
     <ClCompile Include="..\Codes\PSMultiTexture.cpp" />
+    <ClCompile Include="..\Codes\ShadedCube.cpp" />
+    <ClCompile Include="..\Codes\ShaderSample.cpp" />
     <ClCompile Include="..\Codes\StencilMirror.cpp" />
     <ClCompile Include="..\Codes\StencilMirrorShadow.cpp" />
     <ClCompile Include="..\Codes\StencilShadow.cpp" />
@@ -223,6 +233,9 @@
   <ItemGroup>
     <Image Include="Client.ico" />
     <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <HLSL Include="..\..\Shaders\TestShader.fx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -20,7 +20,8 @@
 #include "StencilShadow.h"
 #include "PSMultiTexture.h"
 #include "XFile.h"
-
+#include "HLSLTestDemo.h"
+#include "ShaderSample.h"
 CMainApp::CMainApp()
 	: m_pGraphicDevice(CGraphicDevice::Get())
 {
@@ -49,7 +50,7 @@ HRESULT CMainApp::ReadyMainApp()
 	//demoManager->Push(new ColorTriangle());
 	//demoManager->Push(new LitPyramid());
 	//demoManager->Push(new DirectionalLight());
-	//demoManager->Push(new TexQuad());
+	//demoManager->Push(new HLSLTestDemo());
 	//demoManager->Push(new TexCube());
 	//demoManager->Push(new VSTransform());
 	//demoManager->Push(new AddressModes());
@@ -58,7 +59,8 @@ HRESULT CMainApp::ReadyMainApp()
 	//demoManager->Push(new StencilMirror());
 	//demoManager->Push(new StencilShadow());
 	//demoManager->Push(new PSMultiTexture());
-	demoManager->Push(new XFile());
+	//demoManager->Push(new XFile());
+	demoManager->Push(new ShaderSample());
 	demoManager->SetupDemo();
 
 	return S_OK;

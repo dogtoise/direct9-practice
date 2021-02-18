@@ -105,6 +105,15 @@
     <ClInclude Include="..\Headers\XFile.h">
       <Filter>02.Demo</Filter>
     </ClInclude>
+    <ClInclude Include="..\Headers\HLSLTestDemo.h">
+      <Filter>02.Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\ShadedCube.h">
+      <Filter>01.Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\ShaderSample.h">
+      <Filter>02.Demo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -188,6 +197,15 @@
     <ClCompile Include="..\Codes\XFile.cpp">
       <Filter>02.Demo</Filter>
     </ClCompile>
+    <ClCompile Include="..\Codes\HLSLTestDemo.cpp">
+      <Filter>02.Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\ShadedCube.cpp">
+      <Filter>01.Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\ShaderSample.cpp">
+      <Filter>02.Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Client.ico">
@@ -201,5 +219,8 @@
     <ResourceCompile Include="Client.rc">
       <Filter>99.Default</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <HLSL Include="..\..\Shaders\TestShader.fx" />
   </ItemGroup>
 </Project>

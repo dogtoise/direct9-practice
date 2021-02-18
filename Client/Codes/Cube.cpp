@@ -4,6 +4,7 @@
 
 Cube::Cube()
 {
+	// D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1;
 	DEVICE->CreateVertexBuffer
 	(
 		24 * sizeof(TextureVertex),

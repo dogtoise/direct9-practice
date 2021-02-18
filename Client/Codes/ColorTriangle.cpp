@@ -55,6 +55,11 @@ void ColorTriangle::Cleanup()
 
 void ColorTriangle::Display()
 {
+
+	DEVICE->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
+
+
+
 	DEVICE->SetFVF(ColorVertex::FVF);
 	DEVICE->SetStreamSource(0, triangleBuffer, 0, sizeof(ColorVertex));
 
@@ -63,6 +68,7 @@ void ColorTriangle::Display()
 
 	DEVICE->SetRenderState(D3DRS_SHADEMODE, D3DSHADE_FLAT);
 	DEVICE->DrawPrimitive(D3DPT_TRIANGLELIST, 0, 1);
+
 
 	D3DXMatrixTranslation(&WorldMatrix, 1.25f, 0.0f, 0.0f);
 	DEVICE->SetTransform(D3DTS_WORLD, &WorldMatrix);

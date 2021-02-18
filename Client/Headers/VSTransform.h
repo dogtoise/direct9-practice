@@ -27,7 +27,7 @@ private :
 
 	D3DXMATRIX projMatrix;
 
-
-
+	class Cube* cube;
+	class ShadedCube* shadedCube;
 };
 

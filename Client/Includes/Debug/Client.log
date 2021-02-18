@@ -1,7 +1,3 @@
-﻿  XFile.cpp
-c:\dev\dx9-practice\framework113_practice\client\codes\xfile.cpp(40): warning C4018: '<': signed/unsigned mismatch
-c:\dev\dx9-practice\framework113_practice\client\codes\xfile.cpp(138): warning C4018: '<': signed/unsigned mismatch
-c:\dev\dx9-practice\framework113_practice\client\codes\xfile.cpp(156): warning C4018: '<': signed/unsigned mismatch
-cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-  Client.vcxproj -> C:\Dev\DX9-Practice\Framework113_practice\Client\Includes\../Bin/Client.exe
+﻿  ShaderSample.cpp
+  Client.vcxproj -> C:\Dev\direct9-practice\Client\Includes\../Bin/Client.exe
   Client.vcxproj -> ../Bin/Client.pdb (Full PDB)
