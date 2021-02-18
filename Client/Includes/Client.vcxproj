@@ -163,6 +163,7 @@
     <ClInclude Include="..\Headers\DemoCube.h" />
     <ClInclude Include="..\Headers\DemoManager.h" />
     <ClInclude Include="..\Headers\DirectionalLight.h" />
+    <ClInclude Include="..\Headers\FxSample.h" />
     <ClInclude Include="..\Headers\HLSLTestDemo.h" />
     <ClInclude Include="..\Headers\IDemo.h" />
     <ClInclude Include="..\Headers\LightHelper.h" />
@@ -197,6 +198,7 @@
     <ClCompile Include="..\Codes\DemoCube.cpp" />
     <ClCompile Include="..\Codes\DemoManager.cpp" />
     <ClCompile Include="..\Codes\DirectionalLight.cpp" />
+    <ClCompile Include="..\Codes\FxSample.cpp" />
     <ClCompile Include="..\Codes\HLSLTestDemo.cpp" />
     <ClCompile Include="..\Codes\IDemo.cpp" />
     <ClCompile Include="..\Codes\LightHelper.cpp" />

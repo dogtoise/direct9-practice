@@ -114,6 +114,9 @@
     <ClInclude Include="..\Headers\ShaderSample.h">
       <Filter>02.Demo</Filter>
     </ClInclude>
+    <ClInclude Include="..\Headers\FxSample.h">
+      <Filter>02.Demo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -204,6 +207,9 @@
       <Filter>01.Geometry</Filter>
     </ClCompile>
     <ClCompile Include="..\Codes\ShaderSample.cpp">
+      <Filter>02.Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\FxSample.cpp">
       <Filter>02.Demo</Filter>
     </ClCompile>
   </ItemGroup>
