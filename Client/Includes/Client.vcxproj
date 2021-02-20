@@ -163,6 +163,7 @@
     <ClInclude Include="..\Headers\DemoCube.h" />
     <ClInclude Include="..\Headers\DemoManager.h" />
     <ClInclude Include="..\Headers\DirectionalLight.h" />
+    <ClInclude Include="..\Headers\FxQuadDemo.h" />
     <ClInclude Include="..\Headers\FxSample.h" />
     <ClInclude Include="..\Headers\HLSLTestDemo.h" />
     <ClInclude Include="..\Headers\IDemo.h" />
@@ -172,8 +173,11 @@
     <ClInclude Include="..\Headers\MaterialAlpha.h" />
     <ClInclude Include="..\Headers\MaterialHelper.h" />
     <ClInclude Include="..\Headers\MeshesDemo.h" />
+    <ClInclude Include="..\Headers\MultiTextureRender.h" />
     <ClInclude Include="..\Headers\PSMultiTexture.h" />
+    <ClInclude Include="..\Headers\RTTSample.h" />
     <ClInclude Include="..\Headers\ShadedCube.h" />
+    <ClInclude Include="..\Headers\ShadedQuad.h" />
     <ClInclude Include="..\Headers\ShaderSample.h" />
     <ClInclude Include="..\Headers\StencilMirror.h" />
     <ClInclude Include="..\Headers\StencilMirrorShadow.h" />
@@ -198,6 +202,7 @@
     <ClCompile Include="..\Codes\DemoCube.cpp" />
     <ClCompile Include="..\Codes\DemoManager.cpp" />
     <ClCompile Include="..\Codes\DirectionalLight.cpp" />
+    <ClCompile Include="..\Codes\FxQuadDemo.cpp" />
     <ClCompile Include="..\Codes\FxSample.cpp" />
     <ClCompile Include="..\Codes\HLSLTestDemo.cpp" />
     <ClCompile Include="..\Codes\IDemo.cpp" />
@@ -207,8 +212,11 @@
     <ClCompile Include="..\Codes\MaterialAlpha.cpp" />
     <ClCompile Include="..\Codes\MaterialHelper.cpp" />
     <ClCompile Include="..\Codes\MeshesDemo.cpp" />
+    <ClCompile Include="..\Codes\MultiTextureRender.cpp" />
     <ClCompile Include="..\Codes\PSMultiTexture.cpp" />
+    <ClCompile Include="..\Codes\RTTSample.cpp" />
     <ClCompile Include="..\Codes\ShadedCube.cpp" />
+    <ClCompile Include="..\Codes\ShadedQuad.cpp" />
     <ClCompile Include="..\Codes\ShaderSample.cpp" />
     <ClCompile Include="..\Codes\StencilMirror.cpp" />
     <ClCompile Include="..\Codes\StencilMirrorShadow.cpp" />
@@ -237,6 +245,8 @@
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <HLSL Include="..\..\Shaders\MultiRender.fx" />
+    <HLSL Include="..\..\Shaders\QuadShader.fx" />
     <HLSL Include="..\..\Shaders\TestShader.fx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

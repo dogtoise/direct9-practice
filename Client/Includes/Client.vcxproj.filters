@@ -16,6 +16,9 @@
     <Filter Include="98.Utility">
       <UniqueIdentifier>{0b59df2b-d31a-4163-b983-48d614f85913}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{d7a0c39c-50f6-497d-8f1b-e36fcc66c951}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -117,6 +120,18 @@
     <ClInclude Include="..\Headers\FxSample.h">
       <Filter>02.Demo</Filter>
     </ClInclude>
+    <ClInclude Include="..\Headers\MultiTextureRender.h">
+      <Filter>02.Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\ShadedQuad.h">
+      <Filter>01.Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\RTTSample.h">
+      <Filter>02.Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\FxQuadDemo.h">
+      <Filter>02.Demo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -212,6 +227,18 @@
     <ClCompile Include="..\Codes\FxSample.cpp">
       <Filter>02.Demo</Filter>
     </ClCompile>
+    <ClCompile Include="..\Codes\MultiTextureRender.cpp">
+      <Filter>02.Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\ShadedQuad.cpp">
+      <Filter>01.Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\RTTSample.cpp">
+      <Filter>02.Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\FxQuadDemo.cpp">
+      <Filter>02.Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Client.ico">
@@ -227,6 +254,14 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <HLSL Include="..\..\Shaders\TestShader.fx" />
+    <HLSL Include="..\..\Shaders\MultiRender.fx">
+      <Filter>Shader</Filter>
+    </HLSL>
+    <HLSL Include="..\..\Shaders\TestShader.fx">
+      <Filter>Shader</Filter>
+    </HLSL>
+    <HLSL Include="..\..\Shaders\QuadShader.fx">
+      <Filter>Shader</Filter>
+    </HLSL>
   </ItemGroup>
 </Project>

@@ -23,6 +23,9 @@
 #include "HLSLTestDemo.h"
 #include "ShaderSample.h"
 #include "FxSample.h"
+#include "MultiTextureRender.h"
+#include "RTTSample.h"
+#include "FxQuadDemo.h"
 CMainApp::CMainApp()
 	: m_pGraphicDevice(CGraphicDevice::Get())
 {
@@ -62,7 +65,9 @@ HRESULT CMainApp::ReadyMainApp()
 	//demoManager->Push(new PSMultiTexture());
 	//demoManager->Push(new XFile());
 	//demoManager->Push(new ShaderSample());
-	demoManager->Push(new FxSample());
+	//demoManager->Push(new MultiTextureRender());
+	demoManager->Push(new RTTSample());
+	//demoManager->Push(new FxQuadDemo());
 	demoManager->SetupDemo();
 
 	return S_OK;
