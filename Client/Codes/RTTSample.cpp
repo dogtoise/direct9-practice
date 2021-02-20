@@ -102,7 +102,9 @@ void RTTSample::Display()
 	m_pEffect->SetValue("ViewMatrix", &viewMatrix, sizeof(viewMatrix));
 	m_pEffect->SetValue("ProjMatrix", &projMatrix, sizeof(projMatrix));
 	m_pEffect->SetValue("Diffuse", &diffuse, sizeof(diffuse));
-	DEVICE->SetTexture(0, texture);
+	//DEVICE->SetTexture(0, texture);
+	D3DXHANDLE baseHandler = m_pEffect->GetParameterByName(0, "BaseMap");
+	m_pEffect->SetTexture(baseHandler, texture);
 
 
 	m_pEffect->SetTechnique("Default_Technique");
@@ -151,7 +153,11 @@ void RTTSample::Display()
 	m_pEffect->SetValue("ProjMatrix", &projMatrix, sizeof(projMatrix));
 	m_pEffect->SetValue("Diffuse", &diffuse, sizeof(diffuse));
 	//m_pEffect->SetTexture("BaseMap", texture);
-	DEVICE->SetTexture(0, defaultRTTexture);
+
+	D3DXHANDLE resultHandle = m_pEffect->GetParameterByName(0, "DefaultMap");
+	m_pEffect->SetTexture(resultHandle, defaultRTTexture);
+
+	//DEVICE->SetTexture(0, defaultRTTexture);
 	
 	m_pEffect->SetTechnique("Merge_Technique");
 	m_pEffect->Begin(0, 0);

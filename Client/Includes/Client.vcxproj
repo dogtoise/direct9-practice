@@ -179,6 +179,7 @@
     <ClInclude Include="..\Headers\ShadedCube.h" />
     <ClInclude Include="..\Headers\ShadedQuad.h" />
     <ClInclude Include="..\Headers\ShaderSample.h" />
+    <ClInclude Include="..\Headers\SimpleDeferred.h" />
     <ClInclude Include="..\Headers\StencilMirror.h" />
     <ClInclude Include="..\Headers\StencilMirrorShadow.h" />
     <ClInclude Include="..\Headers\StencilShadow.h" />
@@ -218,6 +219,7 @@
     <ClCompile Include="..\Codes\ShadedCube.cpp" />
     <ClCompile Include="..\Codes\ShadedQuad.cpp" />
     <ClCompile Include="..\Codes\ShaderSample.cpp" />
+    <ClCompile Include="..\Codes\SimpleDeferred.cpp" />
     <ClCompile Include="..\Codes\StencilMirror.cpp" />
     <ClCompile Include="..\Codes\StencilMirrorShadow.cpp" />
     <ClCompile Include="..\Codes\StencilShadow.cpp" />
@@ -247,6 +249,7 @@
   <ItemGroup>
     <HLSL Include="..\..\Shaders\MultiRender.fx" />
     <HLSL Include="..\..\Shaders\QuadShader.fx" />
+    <HLSL Include="..\..\Shaders\SimpleDeferred.fx" />
     <HLSL Include="..\..\Shaders\TestShader.fx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

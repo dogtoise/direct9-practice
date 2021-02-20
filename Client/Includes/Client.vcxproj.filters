@@ -132,6 +132,7 @@
     <ClInclude Include="..\Headers\FxQuadDemo.h">
       <Filter>02.Demo</Filter>
     </ClInclude>
+    <ClInclude Include="..\Headers\SimpleDeferred.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -239,6 +240,7 @@
     <ClCompile Include="..\Codes\FxQuadDemo.cpp">
       <Filter>02.Demo</Filter>
     </ClCompile>
+    <ClCompile Include="..\Codes\SimpleDeferred.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Client.ico">
@@ -261,6 +263,9 @@
       <Filter>Shader</Filter>
     </HLSL>
     <HLSL Include="..\..\Shaders\QuadShader.fx">
+      <Filter>Shader</Filter>
+    </HLSL>
+    <HLSL Include="..\..\Shaders\SimpleDeferred.fx">
       <Filter>Shader</Filter>
     </HLSL>
   </ItemGroup>

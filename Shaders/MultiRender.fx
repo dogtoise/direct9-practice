@@ -3,9 +3,27 @@ matrix ViewMatrix;
 matrix ProjMatrix;
 float4 Diffuse;
 
-sampler2D BaseMap;
-sampler2D DefaultMap;
-sampler2D AlphaMap;
+texture BaseMap;
+sampler BaseSampler = sampler_state
+{
+	Texture = (BaseMap);
+	MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    MipFilter = None;
+    AddressU = clamp;
+    AddressV = clamp;
+};
+texture DefaultMap;
+sampler DefaultSampler = sampler_state
+{
+	Texture = (DefaultMap);
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    MipFilter = None;
+    AddressU = clamp;
+    AddressV = clamp;
+};
+texture AlphaMap;
 
 float4 gaussFilter[7] =  {
 	 -3.0, 0.0, 0.0, 1.0/64.0, 
@@ -36,7 +54,7 @@ void DefaultVS(
 
 float4 DefaultPS(float2 texcoord : TEXCOORD0) : COLOR0
 {
-	float4 baseColor = tex2D(BaseMap, texcoord);
+	float4 baseColor = tex2D(BaseSampler, texcoord);
 
 	return saturate(baseColor + Diffuse);
 }
@@ -57,7 +75,7 @@ void AlphaDrawVS(
 
 float4 AlphaDrawPS(float2 texcoord : TEXCOORD0) : COLOR0
 {
-	float4 baseColor = tex2D(BaseMap, texcoord);
+	float4 baseColor = tex2D(BaseSampler, texcoord);
 
 	return baseColor.w;
 }
@@ -77,11 +95,12 @@ void GaussVS(float4 position : POSITION,
 float4 GaussPS(float2 texcoord : TEXCOORD0) : COLOR0
 {
 	float4 color = 0.0;
-	float4 originColor = tex2D(BaseMap, texcoord);
+	float4 originColor = tex2D(BaseSampler, texcoord);
 
 
 	for(int i = 0; i < 7; i++)
 	{
+		/*
 		float alpha = tex2D(AlphaMap, float2(texcoord.x + gaussFilter[i].x 
 		* texScaler + texOffset,
 		texcoord.y + gaussFilter[i].y * texScaler + texOffset ));
@@ -90,6 +109,7 @@ float4 GaussPS(float2 texcoord : TEXCOORD0) : COLOR0
 		color += tex2D(BaseMap, float2(texcoord.x + gaussFilter[i].x 
 		* texScaler + texOffset,
 		texcoord.y + gaussFilter[i].y * texScaler + texOffset )) * gaussFilter[i].w * alpha;
+	*/
 	} 
 
 	return originColor;
@@ -109,7 +129,7 @@ void MergeVS(float4 position : POSITION,
 }
 float4 MergePS(float2 texcoord : TEXCOORD0) : COLOR0
 {
-	float4 defaultColor = tex2D(DefaultMap, texcoord);
+	float4 defaultColor = tex2D(DefaultSampler, texcoord);
 	//return float4(255, 255,255,255);
 	return saturate(defaultColor + Diffuse);
 }
