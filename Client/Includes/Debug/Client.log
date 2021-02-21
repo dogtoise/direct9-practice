@@ -1,3 +1,4 @@
-﻿  fxc SimpleDeferred.fx...
+﻿  DeferredWithLight.cpp
+c:\dev\direct9-practice\client\codes\deferredwithlight.cpp(239): warning C4018: '<': signed/unsigned mismatch
   Client.vcxproj -> C:\Dev\direct9-practice\Client\Includes\../Bin/Client.exe
   Client.vcxproj -> ../Bin/Client.pdb (Full PDB)

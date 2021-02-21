@@ -27,6 +27,7 @@
 #include "RTTSample.h"
 #include "FxQuadDemo.h"
 #include "SimpleDeferred.h"
+#include "DeferredWithLight.h"
 CMainApp::CMainApp()
 	: m_pGraphicDevice(CGraphicDevice::Get())
 {
@@ -69,7 +70,8 @@ HRESULT CMainApp::ReadyMainApp()
 	//demoManager->Push(new MultiTextureRender());
 	//demoManager->Push(new RTTSample());
 	//demoManager->Push(new FxQuadDemo());
-	demoManager->Push(new SimpleDeferred());
+	//demoManager->Push(new SimpleDeferred());
+	demoManager->Push(new DeferredWithLight());
 	demoManager->SetupDemo();
 
 	return S_OK;

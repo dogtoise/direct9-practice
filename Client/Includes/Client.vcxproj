@@ -160,6 +160,7 @@
     <ClInclude Include="..\Headers\AddressModes.h" />
     <ClInclude Include="..\Headers\ColorTriangle.h" />
     <ClInclude Include="..\Headers\Cube.h" />
+    <ClInclude Include="..\Headers\DeferredWithLight.h" />
     <ClInclude Include="..\Headers\DemoCube.h" />
     <ClInclude Include="..\Headers\DemoManager.h" />
     <ClInclude Include="..\Headers\DirectionalLight.h" />
@@ -200,6 +201,7 @@
     <ClCompile Include="..\Codes\AddressModes.cpp" />
     <ClCompile Include="..\Codes\ColorTriangle.cpp" />
     <ClCompile Include="..\Codes\Cube.cpp" />
+    <ClCompile Include="..\Codes\DeferredWithLight.cpp" />
     <ClCompile Include="..\Codes\DemoCube.cpp" />
     <ClCompile Include="..\Codes\DemoManager.cpp" />
     <ClCompile Include="..\Codes\DirectionalLight.cpp" />
@@ -247,7 +249,9 @@
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <HLSL Include="..\..\Shaders\DeferredShader.fx" />
     <HLSL Include="..\..\Shaders\MultiRender.fx" />
+    <HLSL Include="..\..\Shaders\PointLight.fx" />
     <HLSL Include="..\..\Shaders\QuadShader.fx" />
     <HLSL Include="..\..\Shaders\SimpleDeferred.fx" />
     <HLSL Include="..\..\Shaders\TestShader.fx" />
