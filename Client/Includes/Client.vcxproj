@@ -249,6 +249,7 @@
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <HLSL Include="..\..\Shaders\AmbientLight.fx" />
     <HLSL Include="..\..\Shaders\DeferredShader.fx" />
     <HLSL Include="..\..\Shaders\MultiRender.fx" />
     <HLSL Include="..\..\Shaders\PointLight.fx" />

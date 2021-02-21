@@ -27,6 +27,8 @@ void DeferredWithLight::Setup()
 
 	D3DXCreateEffectFromFile(DEVICE, L"../../Shaders/DeferredShader.fx", nullptr, nullptr, 0, nullptr, &DeferredShader, nullptr);
 	D3DXCreateEffectFromFile(DEVICE, L"../../Shaders/PointLight.fx", nullptr, nullptr, 0, nullptr, &PointLightShader, nullptr);
+	D3DXCreateEffectFromFile(DEVICE, L"../../Shaders/AmbientLight.fx", nullptr, nullptr, 0, nullptr, &AmbientLightShader, nullptr);
+
 
 	D3DXCreateTexture
 	(
@@ -120,7 +122,7 @@ void DeferredWithLight::Setup()
 	light2.Attenuation1 = 0.2f;
 	light2.Attenuation2 = 0.0f;
 
-	//lights.push_back(light1);
+	lights.push_back(light1);
 	lights.push_back(light2);
 	lights.push_back(light2);
 	lights.push_back(light2);
@@ -149,6 +151,9 @@ void DeferredWithLight::DeferredPipeline()
 	DrawCube(rightCube, 10, 0, 10, D3DXVECTOR4(5, 0, 0, 5));
 
 	ResumeMRT();
+	DEVICE->ColorFill(stashRTSurface, NULL, D3DXCOLOR(0.f, 0.f, 0.f, 0.f));
+
+	DrawAmbient();
 	DrawLight();
 }
 
@@ -231,11 +236,65 @@ void DeferredWithLight::DrawCube(ShadedCube * cube, float x, float y, float z, D
 	DeferredShader->End();
 }
 
+void DeferredWithLight::DrawAmbient()
+{
+	D3DXMATRIX worldMatrix;
+	D3DXMATRIX viewMatrix;
+	D3DXMATRIX projMatrix;
+
+	D3DXMATRIX viewMatrixInv;
+	D3DXMATRIX projMatrixInv;
+
+	DEVICE->SetStreamSource(0, resultScreen->_vb, 0, resultScreen->vertexSize);
+	DEVICE->SetVertexDeclaration(resultScreen->m_pDeclare);
+	DEVICE->SetIndices(resultScreen->_ib);
+
+	D3DXMatrixOrthoLH(&projMatrix, WIN_WIDTH, WIN_HEIGHT, 0, 1000);
+	D3DXMatrixScaling(&worldMatrix, WIN_WIDTH, WIN_HEIGHT, 1);
+	D3DXMatrixIdentity(&viewMatrix);
+
+
+	AmbientLightShader->SetValue("WorldMatrix", &worldMatrix, sizeof(worldMatrix));
+	AmbientLightShader->SetValue("ViewMatrix", &viewMatrix, sizeof(viewMatrix));
+	AmbientLightShader->SetValue("ProjMatrix", &projMatrix, sizeof(projMatrix));
+
+
+	D3DXHANDLE albedoMap = AmbientLightShader->GetParameterByName(0, "AlbedoTex");
+	AmbientLightShader->SetTexture(albedoMap, albedoRTTexture);
+
+	//D3DXHANDLE specularMap = PointLightShader->GetParameterByName(0, "SpecularTex");
+	//PointLightShader->SetTexture(specularMap, specularRTTextue);
+
+	D3DXVECTOR4 ambientFactor = D3DXVECTOR4( 0.3f, 0.3f, 0.3f, 1);
+
+	AmbientLightShader->SetValue("AmbientFactor", &ambientFactor, sizeof(ambientFactor));
+
+
+	AmbientLightShader->SetTechnique("AmbientLight");
+	AmbientLightShader->Begin(0, 0);
+	{
+		AmbientLightShader->BeginPass(0);
+		DEVICE->DrawIndexedPrimitive
+		(
+			D3DPT_TRIANGLELIST,
+			0,
+			0,
+			4,
+			0,
+			2
+		);
+		AmbientLightShader->EndPass();
+
+	}
+	AmbientLightShader->End();
+	DEVICE->StretchRect(originSurface, NULL, stashRTSurface, NULL, D3DTEXF_NONE);
+
+}
+
 void DeferredWithLight::DrawLight()
 {
 
-	DEVICE->ColorFill(stashRTSurface, NULL, D3DXCOLOR(0.f, 0.f, 0.f, 0.f));
-
+	
 	for (int i = 0; i < lights.size(); i++)
 	{
 		D3DXMATRIX worldMatrix;

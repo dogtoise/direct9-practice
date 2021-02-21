@@ -37,6 +37,7 @@ private :
 	LPD3DXEFFECT DeferredShader = nullptr;
 
 	LPD3DXEFFECT PointLightShader = nullptr;
+	LPD3DXEFFECT AmbientLightShader = nullptr;
 
 	IDirect3DTexture9* cubeTexture;
 

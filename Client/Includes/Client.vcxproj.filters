@@ -284,5 +284,8 @@
     <HLSL Include="..\..\Shaders\PointLight.fx">
       <Filter>Shader</Filter>
     </HLSL>
+    <HLSL Include="..\..\Shaders\AmbientLight.fx">
+      <Filter>Shader</Filter>
+    </HLSL>
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 ﻿  DeferredWithLight.cpp
-c:\dev\direct9-practice\client\codes\deferredwithlight.cpp(239): warning C4018: '<': signed/unsigned mismatch
+c:\dev\direct9-practice\client\codes\deferredwithlight.cpp(298): warning C4018: '<': signed/unsigned mismatch
+cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
   Client.vcxproj -> C:\Dev\direct9-practice\Client\Includes\../Bin/Client.exe
   Client.vcxproj -> ../Bin/Client.pdb (Full PDB)
