@@ -28,6 +28,7 @@
 #include "FxQuadDemo.h"
 #include "SimpleDeferred.h"
 #include "DeferredWithLight.h"
+#include "DeferredWithBlur.h"
 CMainApp::CMainApp()
 	: m_pGraphicDevice(CGraphicDevice::Get())
 {
@@ -71,7 +72,8 @@ HRESULT CMainApp::ReadyMainApp()
 	//demoManager->Push(new RTTSample());
 	//demoManager->Push(new FxQuadDemo());
 	//demoManager->Push(new SimpleDeferred());
-	demoManager->Push(new DeferredWithLight());
+	//demoManager->Push(new DeferredWithLight());
+	demoManager->Push(new DeferredWithBlur());
 	demoManager->SetupDemo();
 
 	return S_OK;

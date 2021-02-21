@@ -138,6 +138,9 @@
     <ClInclude Include="..\Headers\DeferredWithLight.h">
       <Filter>02.Demo</Filter>
     </ClInclude>
+    <ClInclude Include="..\Headers\DeferredWithBlur.h">
+      <Filter>02.Demo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -251,6 +254,9 @@
     <ClCompile Include="..\Codes\DeferredWithLight.cpp">
       <Filter>02.Demo</Filter>
     </ClCompile>
+    <ClCompile Include="..\Codes\DeferredWithBlur.cpp">
+      <Filter>02.Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Client.ico">
@@ -285,6 +291,12 @@
       <Filter>Shader</Filter>
     </HLSL>
     <HLSL Include="..\..\Shaders\AmbientLight.fx">
+      <Filter>Shader</Filter>
+    </HLSL>
+    <HLSL Include="..\..\Shaders\SimpleBlur.fx">
+      <Filter>Shader</Filter>
+    </HLSL>
+    <HLSL Include="..\..\Shaders\DirectionalLight.fx">
       <Filter>Shader</Filter>
     </HLSL>
   </ItemGroup>

@@ -10,7 +10,6 @@ matrix TempProjMatrix;
 
 float4 Diffuse;
 
-float3 EyePosition;
 float3 LightPosition;
 float LightAmbient;
 float LightRange;
